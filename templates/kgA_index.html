@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!- 样例来源：https://blog.csdn.net/liaoningxinmin/article/details/105323281 ->
+<head>
+    <title>show  Cytoscape.js</title>
+    <style type="text/css">
+        /* cytoscape graph */
+        #cy {
+            height: 500px;
+            width: 500px;
+            background-color: #f9f9f9;
+            display: block;
+        }
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/cytoscape/2.3.16/cytoscape.min.js"></script>
+<script>
+        $(function(){
+            var node = {{ node|safe }};
+            var edge = {{ edge|safe }};
+            cytoscape({
+              container: document.getElementById('cy'),
+              style: [
+                { selector: 'node[label = "中国科学院计算技术研究所"]',
+                  css: {'background-color': '#6FB1FC', 'content': 'data(name)'}
+                },
+                { selector: 'node[label = "school"]',
+                  css: {'background-color': '#F5A45D', 'content': 'data(title)'}
+                },
+                { selector: 'edge',
+                  css: {'content': 'data(relationship)', 'target-arrow-shape': 'triangle'}
+                }
+              ],
+              elements: {
+                nodes: node,
+                edges: edge
+              },
+              layout: { name: 'grid'}
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div>动态传送数据</div>
+    <div id="cy"></div>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高考志愿填报助手</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+</head>
+<body>
+
+<ul>
+    <li><a href="/">简洁优雅的首页 Designed by 孔祥龙</a></li>
+    <li><a href="{% url 'data:linediagram' %}">数据提取与统计组, 组长09118226李辰浩，共16人</a></li>
+    <li><a href="{% url 'aiA:hello' %}">AI算法应用A组, 组长09118127胡艺凡，共12人</a></li>
+    <li><a href="{% url 'aiB:hello' %}">AI算法应用B组, 组长61518217高奕辰，共8人</a></li>
+    <li><a href="{% url 'aiC:hello' %}">AI算法应用C组, 组长09118119黄一凡，共11人</a></li>
+    <li><a href="{% url 'kgA:graph' %}">知识图谱构建A组, 组长09118129陈翼张，共13人</a></li>
+    <li><a href="{% url 'kgB:graph' %}">知识图谱构建B组, 组长09118135王屹之，共12人</a></li>
+    <li><a href="{% url 'kgInference:hello' %}">知识推理和图谱可视化, 组长09118202赵基藤，共12人</a></li>
+</ul>
+    <form action="/rec/" method="get">
+        {% csrf_token %}
+        <p>
+            <label>高考分数：</label><input type="text" name="score">
+        </p>
+        <select data-placeholder="选择省份..." class="form-control" name="select_province" id="select_province">
+　　          <option value="">请选择省份</option>
+　　          {% for key,value in province.items %}
+　　          <option value="{{ value }}" hassubinfo="true">{{ value }}</option>
+　           　{% endfor %}
+        </select>
+        <select data-placeholder="选择科目..." class="form-control" name="select_category" id="select_category">
+　　          <option value="">请选择科类</option>
+　　          {% for key,value in category.items %}
+　　          <option value="{{ value }}" hassubinfo="true">{{ value }}</option>
+　　          {% endfor %}
+        </select>
+        <p>
+            <input type="submit" name="login">
+        </p>
+    </form>
+<p><img src="/static/images/group.jpg"></p>
+</body>
+</html>
