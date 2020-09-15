@@ -89,29 +89,30 @@ def getMajors(request):
 
 
 def getRankings(request):
+    num = 0
     filename=os.getcwd()
-    dirs = os.listdir(filename+'\\extFiles'+'\\json\\')
+    dirs = os.listdir(filename+'\\extFiles'+ '\\'+'json_csv')
     for i in range(0, 110):  # 文件个数
 
         df = pd.read_csv(
-            filename+'\\extFiles'+ '\\json\\' + dirs[i],encoding='gbk')  # 返回一个DataFrame的对象，这个是pandas的一个数据结构
+            filename+'\\extFiles'+ '\\'+'json_csv\\' + dirs[i])  # 返回一个DataFrame的对象，这个是pandas的一个数据结构
 
-        df.columns = ["Col1", "Col2", "Col3","Col4","Col5"]
+        df.columns = ["Col1", "Col2", "Col3","Col4","Col5","Col6"]
 
-        X = df[["Col1", "Col2", "Col3","Col4","Col5"]]  # 抽取前七列作为训练数据的各属性值
+        X = df[["Col1","Col2", "Col3", "Col4","Col5","Col6"]] # 抽取几列作为训练数据的各属性值
 
         y= np.array(X)  # 存到数组中
         op=len(y)
-        for p in range(0,op):
 
+        for p in range(0+num,op+num):
+            c1 = models.Rankings(
+                id=p,
+                provinceID=models.Provinces.objects.get(provinceID=y[p-num][3]),
+                score=y[p-num][1],
+                rank=y[p-num][2],
+                categoryID=models.Category.objects.get(categoryname=y[p-num][5]),
+                year=y[p-num][4], )
+            c1.save()
+        num += op
 
-           c1=models.Rankings(
-
-               provinceID=models.Provinces.objects.get(provinceID=y[p][2]),
-               score=y[p][0],
-               rank=y[p][1],
-               categoryID=models.Category.objects.get(categoryname=y[p][4]),
-               year=y[p][3],
-        )
-           c1.save()
     return HttpResponse('Rankings in')
