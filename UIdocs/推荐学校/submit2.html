@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0</title>
+</head>
+<body>
+    <h3>姚校长专属版</h3>
+    <form method = "post">
+        <h4><i class="icon fa fa-check"></i>提交成功</h4>
+        {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+        <div>
+            {{msg}}
+        </div>
+        {% endfor %}
+        <h5>推荐学校：东南大学</h5>
+        <h5>推荐专业：姚班(哈哈哈哈哈哈哈)</h5>
+
+
+
+    </form>
+
+</body>
+</html>
