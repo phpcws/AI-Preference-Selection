@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<body>
+        {%for collegeName,score in scoresRanking.items %}
+            <tr>
+                <td> {{collegeName}} </td>
+                <td> {{score}} </td>
+            </tr>
+        {% endfor %}
+</body>
+</html>
