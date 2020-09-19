@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class KgbConfig(AppConfig):
+class KgBConfig(AppConfig):
     name = 'kgB'
