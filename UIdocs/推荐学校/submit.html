@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0</title>
+</head>
+<body>
+    <h3>姚校长专属版</h3>
+    <form method="POST" action='/submit'>
+        {{form.csrf_token}}
+        {{form.name.label}} {{form.name(size=20)}}<br>
+        {{form.my_file.label}} {{form.my_file()}}<br>
+        {{form.infor.label}} {{form.infor()}}<br>
+        {{form.is_fav.label}} {{form.is_fav()}}<br>
+        {{form.is_f.label}} {{form.is_f()}}<br>
+        {{form.submit()}}<br>
+    </form>
+
+</body>
+</html>
