@@ -5,7 +5,9 @@ from django.shortcuts import render
 def helloworld(request):
     return HttpResponse('Hello World! by kgInference group')
 
-
+def KgBaseInfoFillin(request):
+    return render(request, 'KgBaseInfoFillin.html')
+    
 def InfoIntoQuestions(request):  #将用户输入信息转化成更具体的问题，经用户选择具体问题后生成图标。by:陈震寰&张立创
     province = request.POST.get('province')
     score = request.POST.get('score')
