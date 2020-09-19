@@ -31,4 +31,5 @@ urlpatterns = [
     path('kgA/', include(('kgA.urls', 'kgA'), namespace='kgA')),
     path('kgB/', include(('kgB.urls', 'kgB'), namespace='kgB')),
     path('kgInference/', include(('kgInference.urls', 'kgInference'), namespace='kgInference')),
+    path('ormDesign/', include(('ormDesign.urls', 'ormDesign'), namespace='ormDesign')),
 ]

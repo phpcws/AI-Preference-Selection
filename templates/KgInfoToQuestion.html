@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <title>志愿填报问题</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+   
+  </head>
+  <body><select id="questions" class="form-control" required="" data-parsley-id="6485" name="questions">
+     {% for question in questions %}
+        <option id="question" value="{{question}}">{{question}}</option>
+    {% endfor %}
+</select>
+<input type="submit" value="Submit" />
+</body>
+</html>
