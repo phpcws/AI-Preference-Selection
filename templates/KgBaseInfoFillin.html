@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>志愿信息填写</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<label >必填:</label>
+      <br>
+  <form action="questions/" method="POST">
+ 
+ <label>省份<select name="province">
+        
+        <option id="北京" value="北京">北京</option>
+        <option id="天津" value="天津">天津</option>
+        <option id="上海" value="上海">上海</option>
+        <option id="重庆" value="重庆">重庆</option>
+        <option id="河北" value="河北">河北</option>
+        <option id="山西" value="山西">山西</option>
+        <option id="辽宁" value="辽宁">辽宁</option>
+        <option id="吉林" value="吉林">吉林</option>
+        <option id="黑龙江" value="黑龙江">黑龙江</option>
+        <option id="江苏" value="江苏">江苏</option>
+        <option id="浙江" value="浙江">浙江</option>
+        <option id="安徽" value="安徽">安徽</option>
+        <option id="福建" value="福建">福建</option>
+        <option id="江西" value="江西">江西</option>
+        <option id="山东" value="山东">山东</option>
+        <option id="河南" value="河南">河南</option>
+        <option id="湖北" value="湖北">湖北</option>
+        <option id="湖南" value="湖南">湖南</option>
+        <option id="广东" value="广东">广东</option>
+        <option id="海南" value="海南">海南</option>
+        <option id="四川" value="四川">四川</option>
+        <option id="贵州" value="贵州">贵州</option>
+        <option id="云南" value="云南">云南</option>
+        <option id="陕西" value="陕西">陕西</option>
+        <option id="甘肃" value="甘肃">甘肃</option>
+        <option id="青海" value="青海">青海</option>
+        <option id="内蒙古" value="内蒙古">内蒙古</option>
+        <option id="广西" value="广西">广西</option>
+        <option id="西藏" value="西藏">西藏</option>
+        <option id="宁夏" value="宁夏">宁夏</option>
+        <option id="新疆" value="新疆">新疆</option>
+    </select> </label>
+
+
+  <label>文理科<select name="subject">
+        
+        <option id="文科" value="文科">文科</option>
+        <option id="理科" value="理科">理科</option>
+    </select> </label>
+
+
+
+  <form>
+  <div class="form-group">
+
+    <input  class="form-control" name="score" aria-describedby="emailHelp" placeholder="高考分数"
+    >
+
+  </div>
+      <label >选填:</label>
+      <br>
+<label>倾向省份<select name="Tprovince">
+        <option id="北京" value="北京">北京</option>
+        <option id="天津" value="天津">天津</option>
+        <option id="上海" value="上海">上海</option>
+        <option id="重庆" value="重庆">重庆</option>
+        <option id="河北" value="河北">河北</option>
+        <option id="山西" value="山西">山西</option>
+        <option id="辽宁" value="辽宁">辽宁</option>
+        <option id="吉林" value="吉林">吉林</option>
+        <option id="黑龙江" value="黑龙江">黑龙江</option>
+        <option id="江苏" value="江苏">江苏</option>
+        <option id="浙江" value="浙江">浙江</option>
+        <option id="安徽" value="安徽">安徽</option>
+        <option id="福建" value="福建">福建</option>
+        <option id="江西" value="江西">江西</option>
+        <option id="山东" value="山东">山东</option>
+        <option id="河南" value="河南">河南</option>
+        <option id="湖北" value="湖北">湖北</option>
+        <option id="湖南" value="湖南">湖南</option>
+        <option id="广东" value="广东">广东</option>
+        <option id="海南" value="海南">海南</option>
+        <option id="四川" value="四川">四川</option>
+        <option id="贵州" value="贵州">贵州</option>
+        <option id="云南" value="云南">云南</option>
+        <option id="陕西" value="陕西">陕西</option>
+        <option id="甘肃" value="甘肃">甘肃</option>
+        <option id="青海" value="青海">青海</option>
+        <option id="内蒙古" value="内蒙古">内蒙古</option>
+        <option id="广西" value="广西">广西</option>
+        <option id="西藏" value="西藏">西藏</option>
+        <option id="宁夏" value="宁夏">宁夏</option>
+        <option id="新疆" value="新疆">新疆</option>
+        
+    </select> </label>
+
+  <label>倾向专业<select name="Tmajor">
+        
+        <option id="计算机" value="计算机">计算机</option>
+        <option id="土木" value="土木">土木</option>
+        <option id="电子" value="电子">电子</option>
+    </select> </label>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+</body>
+</html>

@@ -3,4 +3,6 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('', views.helloworld, name='hello'),
+    path('KgBaseInfoFillin/',views.KgBaseInfoFillin,name='KgBaseInfoFillin'),#填写志愿信息
+    path('KgBaseInfoFillin/questions/',views.InfoIntoQuestions,name="InfoIntoQuestions"),#返回志愿问题
 ]
