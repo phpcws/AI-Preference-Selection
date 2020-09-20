@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-
+from py2neo import Graph, Node, Relationship
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -22,6 +22,11 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '7$h+@&)fux1auo9b2xzw#^mg_x8ia(!!80%@isbfu9$#n2sr%n'
+
+# NEO4J SETTINGS
+graph = Graph("http://localhost:7474",
+              username="neo4j",
+              password="123456")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
