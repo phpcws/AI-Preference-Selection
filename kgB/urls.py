@@ -18,6 +18,6 @@ from . import views
 
 urlpatterns = [
     path('hello/', views.helloworld, name='hello'),
-    path('kgBIndex/', views.kgBIndex, name='kgBIndex'),
+    path('kgBIndex/', views.kgBIndex, name='graph'),
     path('jiangsu04/', views.jiangsu04, name='jiangsu04'),
 ]
