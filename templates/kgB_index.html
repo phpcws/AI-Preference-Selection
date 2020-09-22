@@ -1,49 +1,28 @@
+{% load static  %}
 <!DOCTYPE html>
-<html>
-<!- 样例来源：https://blog.csdn.net/liaoningxinmin/article/details/105323281 ->
+<html lang="en">
 <head>
-    <title>show  Cytoscape.js</title>
-    <style type="text/css">
-        /* cytoscape graph */
-        #cy {
-            height: 500px;
-            width: 500px;
-            background-color: #f9f9f9;
-            display: block;
-        }
-    </style>
-    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-    <script src="http://cdn.bootcss.com/cytoscape/2.3.16/cytoscape.min.js"></script>
-<script>
-        $(function(){
-            var node = {{ node|safe }};
-            var edge = {{ edge|safe }};
-            cytoscape({
-              container: document.getElementById('cy'),
-              style: [
-                { selector: 'node[label = "中国科学院计算技术研究所"]',
-                  css: {'background-color': '#6FB1FC', 'content': 'data(name)'}
-                },
-                { selector: 'node[label = "school"]',
-                  css: {'background-color': '#F5A45D', 'content': 'data(title)'}
-                },
-                { selector: 'edge',
-                  css: {'content': 'data(relationship)', 'target-arrow-shape': 'triangle'}
-                }
-              ],
-              elements: {
-                nodes: node,
-                edges: edge
-              },
-              layout: { name: 'grid'}
-            });
-        });
-    </script>
-
+    <meta charset="UTF-8">
+    <title>省份信息知识图谱-知识图谱构建B组</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
-    <div>动态传送数据</div>
-    <div id="cy"></div>
-<div></div>
+<h1>省份信息知识图谱-知识图谱构建B组</h1>
+<form action="/kgB/kg_province" method="get">
+    {% csrf_token %}
+    <select data-placeholder="选择省份..." class="form-control" name="select_province" id="select_province">
+　　          <option value="">请选择省份</option>
+　　          {% for key,value in province.items %}
+　　          <option value="{{ value }}" hassubinfo="true">{{ value }}</option>
+　            {% endfor %}
+    </select>
+    <p>
+        <input type="submit" name="login">
+    </p>
+</form>
+<ul>
+
+</ul>
+<p>(TO DO: 后期此处可以用下拉框选择省份，然后动态传递数据，跳转到相应省份的页面。此处示例仅供参考)</p>
 </body>
 </html>
