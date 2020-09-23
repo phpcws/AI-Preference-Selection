@@ -131,6 +131,17 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   transform: scale(1, -1); }
 
+
+.wenjuanxingone{
+    margin: 0;
+    padding: 0;
+}
+.wenjuanxingtwo{ 
+    margin: 0 auto;
+    text-align: center;
+}
+
+
 :root .fa-rotate-90,
 :root .fa-rotate-180,
 :root .fa-rotate-270,
