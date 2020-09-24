@@ -1,16 +1,19 @@
 import json
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import get_nodelist, get_relationshiplist
+from .models import get_nodelist, get_relationshiplist, get_provincedict
 # Create your views here.
 
 def helloworld(request):
     return HttpResponse('Hello World!')
 
-def kgBIndex(request):
-    return render(request, 'kgBIndex.html')
+def kgB_index(request):
+    province = get_provincedict()
+    return render(request, 'kgB_index.html', {'province': province})
 
-def jiangsu04(request):
-    node = get_nodelist('江苏')
+def kg_province(request):
+    province = request.GET.get("select_province", '')
+    node = get_nodelist(str(province))
     edge = get_relationshiplist(node)
-    return render(request, 'jiangsu04.html', {'node': json.dumps(node), 'edge': json.dumps(edge)})
+    request.encoding = 'utf-8'
+    return render(request, 'kg_province.html', {'node': json.dumps(node), 'edge': json.dumps(edge)})

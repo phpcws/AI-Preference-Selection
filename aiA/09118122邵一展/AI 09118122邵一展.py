@@ -26,9 +26,9 @@ category = ["文科","理科", "all"]
 
 result = open("09118122邵一展.csv","w",encoding="utf-8-sig",newline='')
 writer=csv.writer(result)
-writer.writerow(["rank","provice","category","college"])
+writer.writerow(["rank","province","category","college"])
 
-addition = 10 #向上浮动的分值
+addition = 20 #向上浮动的分值
 for u in university:
     for y in Year:
         for p in Province:
@@ -42,7 +42,7 @@ for u in university:
                     score_list.sort()
                     low_score = score_list[0] #录取最差专业的最低分，如xx的录取最低分
                     high_score = score_list[-1] + addition #录取最好专业的最低分加上向上浮动的分值，如AI的录取最低分
-                    if c == "不分文理":
+                    if c == "all":
                         temp = "json/" + str(y) + p + "all" + ".json" 
                     else:
                         temp = "json/" + str(y) + p + c + ".json" 
@@ -53,7 +53,7 @@ for u in university:
                             if (str(low_score) in load_dict[str(y)][p][c]) & (str(high_score) in load_dict[str(y)][p][c]):
                                 low_rank = load_dict[str(y)][p][c][str(low_score)]
                                 high_rank = load_dict[str(y)][p][c][str(high_score)]
-                                number = (low_rank-high_rank) // 30 + 1 #至少一名，整除30代表近似该分数段有30/88的学生去该大学
+                                number = (low_rank-high_rank) // 20 + 1 #至少一名，整除30代表近似该分数段有20/88的学生去该大学
                                 for _ in range(number):
                                     random_score = random.randint(low_score, high_score) #产生随机分数
                                     if (str(random_score) in load_dict[str(y)][p][c]):
@@ -61,10 +61,10 @@ for u in university:
                                     else: 
                                         random_rank = 1 #说明random_score超过了一分一段表的最高分
                                     writer.writerow([random_rank, p, c, u])
-                            '''else:
+                            else:
                                 for _ in range(10):     #假设10人
                                     writer.writerow(["null", p, c, u])  #null代表存在相应的json但没有对应的分，需要人工进行数据模拟
 
                     else:
                         for _ in range(20):     #假设20人
-                            writer.writerow(["nan", p, c, u])  #nan代表不存在相应的json，也需要人工进行数据模拟'''
+                            writer.writerow(["nan", p, c, u])  #nan代表不存在相应的json，也需要人工进行数据模拟

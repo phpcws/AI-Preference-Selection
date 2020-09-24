@@ -37,12 +37,15 @@ for u in university:
                                         (csv_data["Year"] == y) & (csv_data["category"] == c),
                                         ["College", "Year" , "Province", "category","score"]]
 
+                if p == "上海":
+                    print(temp_data)
+
                 if not temp_data.empty: #存在dataframe
                     score_list = temp_data["score"].values.tolist()
                     score_list.sort()
                     low_score = score_list[0] #录取最差专业的最低分，如xx的录取最低分
                     high_score = score_list[-1] + addition #录取最好专业的最低分加上向上浮动的分值，如AI的录取最低分
-                    if c == "不分文理":
+                    if c == "all":
                         temp = "json/" + str(y) + p + "all" + ".json"
                     else:
                         temp = "json/" + str(y) + p + c + ".json"
