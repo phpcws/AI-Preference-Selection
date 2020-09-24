@@ -4438,8 +4438,8 @@ pre code {
         max-width: 25%;
     }
     .col-lg-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%;
     }
     .col-lg-5 {
         flex: 0 0 41.66667%;
