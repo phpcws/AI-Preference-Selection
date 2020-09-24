@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 330;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.mainbox {
+    display: flex;
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.map {
+    flex: 6;
+    background-color: rgba(255, 255, 255, 0);
+    height: 58rem;
+    width: 2rem;
+}
+
+.chart {
+    flex: 4;
+    height: 58rem;
+    width: 2rem;
+}
