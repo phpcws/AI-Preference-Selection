@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>About</title>
+    <title>详情</title>
     <!-- web fonts -->
     <link href="http://fonts.googleapis.com/css?family=Poppins:100,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
@@ -17,9 +16,6 @@
 </head>
 
 <body>
-
-
-    <!-- Top Menu 1 -->
     <section class="w3l-top-menu-1">
         <div class="top-hd">
             <div class="container">
@@ -28,12 +24,15 @@
                         <li>欢迎使用</li>
 
                     </div>
+                    <div class="accounts col-sm-6 col-6 pr-0">
+                        <li class="top_li1"><a href="#">登录</a></li>
+                        <li class="top_li2"><a href="#">注册</a></li>
+                    </div>
 
                 </header>
             </div>
         </div>
     </section>
-
     <!-- //Top Menu 1 -->
     <section class="w3l-bootstrap-header">
         <nav class="navbar navbar-expand-lg navbar-light py-lg-2 py-2">
@@ -69,71 +68,71 @@
             </div>
         </nav>
     </section>
+    <section class="w3l-features-8">
+        <!-- /features -->
+        <div class="features py-5" id="services">
+            <div class="container py-md-3">
 
+                <div class="fea-gd-vv text-center row mt-5 pt-3">
 
-
-    <section class="w3l-about-breadcrum">
-        <div class="breadcrum-bg py-sm-5 py-4">
-            <div class="container py-lg-3 py-2">
-                <h2>各省份分数表</h2>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-    <section class="w3l-contacts-2">
-        <div class="contacts-main">
-
-            <div class="form-41-mian py-5">
-                <div class="container py-md-3">
-                    <h3 class="cont-head">各省份分数查询</h3>
-                    <div class="d-grid align-form-map">
-                        <div class="form-inner-cont">
-
-                            <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="main-input">
-                                <div class="top-inputs d-flex" style="text-align: center">
-                                    <input type="text" placeholder="Province" name="w3lName" required="" style="width: 200px">
-                                    <input type="number" placeholder="Category" name="w3lName " required="" style="width: 200px">
-                                    <input type="number" placeholder="Grade" name="w3lSender" required="" style="width: 200px">
-                                    <input type="number" placeholder="Year" name="w3lName" required="" style="width: 200px">
-                                    <input type="text" placeholder="College" name="w3lName " required="" style="width: 200px">
-                                </div>
-                                <div class="text-right">
-                                    <button type="submit" class="btn btn-theme3">OK</button>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="float-top col-lg-4 col-md-6">
+                        <a href="services.html"><img src="assets/images/i8.png" class="img-responsive" alt=""></a>
                     </div>
+
+                    <div class="float-top col-lg-4 col-md-6">
+                        <a href="contact.html"><img src="assets/images/i7.png" class="img-responsive" alt=""></a>
+                    </div>
+
+
                 </div>
             </div>
         </div>
+        <!-- //features -->
     </section>
+    <section class="w3l-footer-29-main">
+        <div class="footer-29">
+            <div class="container">
+                <div class="d-grid grid-col-4 footer-top-29">
+                    <div class="footer-list-29 footer-1">
+                        <h6 class="footer-title-29">Contact Us</h6>
+                        <ul>
+                            <li>
+                                <p><span class="fa fa-map-marker"></span> Xianglong Business, SEU</p>
+                            </li>
+                            <li><a href="mailto:haoruili@seu.edu.cn" class="mail"><span class="fa fa-envelope-open-o"></span> haoruili@seu.edu.cn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+  <span class="fa fa-angle-up"></span>
+</button>
+            <script>
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function() {
+                    scrollFunction()
+                };
 
-    <section>
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        document.getElementById("movetop").style.display = "block";
+                    } else {
+                        document.getElementById("movetop").style.display = "none";
+                    }
+                }
 
-
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+            <!-- /move top -->
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- //footer-28 block -->
-
+    </section>
     <script>
         $(function() {
             $('.navbar-toggler').click(function() {
@@ -189,8 +188,4 @@
         })
     </script>
     <!-- //script -->
-
 </body>
-
-</html>
-<!-- // grids block 5 -->
